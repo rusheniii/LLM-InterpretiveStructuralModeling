@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = [
+  "src/*"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llmism"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/*.toml",
+  "/*.md",
+  "examples/*",
+  "src/*",
+  "tests/*",
+]
+
+[project]
+name = "llmism"
+authors = [
+  {name = "Everett Rush", email = "rushen@ornl.gov"},
+]
+version = "1.0.0"
+license = "MIT"
+description = "This is a python package for Interpretive Structural Modeling with large language models."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "httpx2>=2.7.0, <3",
+  "openai>=3.6, <4",
+  "numpy>=2.5, <3",
+  "tenacity>=9, <10",
+  "networkx>=3.6, <4",
+]
+
+[project.optional-dependencies]
+extraction = ["docling>=2.124, <3"]
+metrics = ["scikit-learn>=1.9, <2",]
+
+[project.urls]
+Homepage = "https://github.com/rusheniii/LLM-InterpretiveStructuralModeling"

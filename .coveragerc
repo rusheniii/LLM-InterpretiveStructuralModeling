@@ -1,0 +1,3 @@
+[report]
+# Sort by column: name, stmts, miss, cover
+sort = cover

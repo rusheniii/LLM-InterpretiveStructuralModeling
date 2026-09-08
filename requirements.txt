@@ -1,0 +1,7 @@
+openai
+httpx
+numpy
+tenacity
+docling
+networkx
+scikit-learn
